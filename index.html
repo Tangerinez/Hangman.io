@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hangman!</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" style="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" style="text/css" href="assets/css/style.css">
+</head>
+<body>
+    <header><h1>Welcome to Hangman!</h1></header>
+
+    <div class="upperHalf">
+        <img id="hangman-image" src="assets/images/Hangman.gif" alt="hangman" width="35%" height="35%">
+
+        <div class="upperHalfRight">
+            <div class="mystery-word">Mystery Word</div>
+            <div class="randomWord">
+                <a href="#" class="myButton">Start</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="lowerHalf">
+    <div class="letters">
+        <div class="firstRow">
+        <div class="firstRowA">A</div>
+        <div class="firstRowB">B</div>
+        <div class="firstRowC">C</div>
+        <div class="firstRowD">D</div>
+        <div class="firstRowE">E</div>
+        <div class="firstRowF">F</div>
+        <div class="firstRowG">G</div>
+        <div class="firstRowH">H</div>
+        <div class="firstRowI">I</div>
+        <div class="firstRowJ">J</div>
+        <div class="firstRowK">K</div>
+        </div>
+        
+        <div class="secondRow">
+        <div class="secondRowL">L</div>
+        <div class="secondRowM">M</div>
+        <div class="secondRowN">N</div>
+        <div class="secondRowO">O</div>
+        <div class="secondRowP">P</div>
+        <div class="secondRowQ">Q</div>
+        <div class="secondRowR">R</div>
+        <div class="secondRowS">S</div>
+        <div class="secondRowT">T</div>
+        <div class="secondRowU">U</div>
+        <div class="secondRowV">V</div>
+        </div>  
+        
+        <div class="thirdRow">
+        <div class="thirdRowW">W</div>
+        <div class="thirdRowX">X</div>
+        <div class="thirdRowY">Y</div>
+        <div class="thirdRowZ">Z</div>
+        </div>  
+    </div>
+
+
+    
+    <div class="guessesLeft">
+        <div class="guesses">Guesses Left:</div>
+        <div class="numberGuesses">0</div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+const words = ["nasty", "basketball", "immolate", "crib", "competition", "queen", "lawyer", "brash", "flavor", "crack", "top", "drum", "easy", "hat", "bitter", 
+"filthy", "imbibe", "breezy", "book", "habitual", "compel", "sand", "petite", "boot", "vanish", "earsplitting", "science", "apathetic", "dispensable", "hair",
+"rat", "pump", "renounce", "sort", "earn", "dashing", "resist", "harmony", "invincible", "inspire", "utopian", "astonishing", "macho", "banish", "overconfident",
+"functional", "gusty", "omit", "leather", "interesting", "converse", "bit", "occur", "breakfast", "key", "aboriginal", "terrific", "vigorous", "mailbox", "flee"];
+
+// Returns a string
+const randomWord = words[Math.floor(Math.random() * words.length) + 1];
+console.log(randomWord);
+
+//Each letter of the random word as an index of an array
+const wordChar = randomWord.split('');
+
+// Returns "_" for every letter in the word
+function blanks() {
+    for (var i = 0; i< randomWord.length; i++) {
+    answers[i] = "_";
+    };
+};
+
+let wordArray = []
+
+// Adds "_" for each letter into an empty array, then joins that array together
+const button = document.querySelector('.myButton')
+button.addEventListener('click', function() {
+    for (let i = 0; i < randomWord.length; i++) {
+        wordArray.push('_')
+    };
+
+    button.innerText = wordArray.join(' ')
+});
+
+const keyboard = document.querySelector('.letters')
+keyboard.onclick = (event) => {
+    event.target.style.visibility = 'hidden'
+    wordChar.forEach(letter => {
+        if (letter === event.target.innerHTML.toLowerCase()) {
+
+            wordArray[wordChar.indexOf(letter)] = letter
+            button.innerText = wordArray.join(' ')
+        }    
+    })
+}
+
+
+//If a is one of the letters in the word
+
+
+
+</script>
+
+</body>
+
+</html>
