@@ -115,12 +115,16 @@ keyboard.onclick = (event) => {      //Every time you click a letter...
             button.innerText = wordArray.join(' ');          //"_" gets replaced by the new matching letter
         };
     });
+    guessWrong();   // Right now this decreases EVERY GUESS BY 1 -> Need to change for only incorrect guesses
 };
 
-function userLoses() {     //If user guesses letter incorrectly
+function guessWrong() {     //If user guesses letter incorrectly
     guessesLeft--;
-    guessesLeft_div.innerHTML = guessesLeft;
-}
+    guessesLeft_div.textContent = guessesLeft;
+    if (guessesLeft === 0) {
+        setTimeout("alert('You have lost. Please refresh the browser to try again.')", 300);
+    };
+};
 
 
 </script>
