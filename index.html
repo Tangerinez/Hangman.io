@@ -65,7 +65,7 @@
     
     <div class="guessesLeft">
         <div class="guesses">Guesses Left:</div>
-        <div class="numberGuesses">0</div>
+        <div class="numberGuesses">8</div>
     </div>
 </div>
 
@@ -75,6 +75,10 @@ const words = ["nasty", "basketball", "immolate", "crib", "competition", "queen"
 "filthy", "imbibe", "breezy", "book", "habitual", "compel", "sand", "petite", "boot", "vanish", "earsplitting", "science", "apathetic", "dispensable", "hair",
 "rat", "pump", "renounce", "sort", "earn", "dashing", "resist", "harmony", "invincible", "inspire", "utopian", "astonishing", "macho", "banish", "overconfident",
 "functional", "gusty", "omit", "leather", "interesting", "converse", "bit", "occur", "breakfast", "key", "aboriginal", "terrific", "vigorous", "mailbox", "flee"];
+
+// Number of guesses left
+let guessesLeft = 8;
+let guessesLeft_div = document.querySelector(".numberGuesses");
 
 // Returns a string
 const randomWord = words[Math.floor(Math.random() * words.length) + 1];
@@ -90,37 +94,36 @@ function blanks() {
     };
 };
 
-let wordArray = []
+let wordArray = [];
 
 // Adds "_" for each letter into an empty array, then joins that array together
 const button = document.querySelector('.myButton')
 button.addEventListener('click', function() {
     for (let i = 0; i < randomWord.length; i++) {
-        wordArray.push('_')
+        wordArray.push('_');
     };
-
-    button.innerText = wordArray.join(' ')
+    button.innerText = wordArray.join(' ');
 });
 
+
 const keyboard = document.querySelector('.letters')
-keyboard.onclick = (event) => {
-    event.target.style.visibility = 'hidden'
-    wordChar.forEach(letter => {
-        if (letter === event.target.innerHTML.toLowerCase()) {
+keyboard.onclick = (event) => {      //Every time you click a letter...
+    event.target.style.visibility = 'hidden';   //That element's opacity becomes 0
+    wordChar.forEach((letter, index) => {         
+        if (letter === event.target.innerHTML.toLowerCase()) {    //If letter equals the letter in that index of the array
+            wordArray[index] = letter;          //wordArray at the index of matched letter becomes that letter
+            button.innerText = wordArray.join(' ');          //"_" gets replaced by the new matching letter
+        };
+    });
+};
 
-            wordArray[wordChar.indexOf(letter)] = letter
-            button.innerText = wordArray.join(' ')
-        }    
-    })
+function userLoses() {     //If user guesses letter incorrectly
+    guessesLeft--;
+    guessesLeft_div.innerHTML = guessesLeft;
 }
-
-
-//If a is one of the letters in the word
-
 
 
 </script>
 
 </body>
-
 </html>

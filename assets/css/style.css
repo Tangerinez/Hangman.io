@@ -47,9 +47,17 @@ footer {
     padding: 20px;
 }
 
+.firstRowA:hover {
+    cursor: pointer;
+}
+
 .firstRowB {
     display: inline-block;
     padding: 20px;
+}
+
+.firstRowB:hover {
+    cursor: pointer;
 }
 
 .firstRowC {
@@ -57,9 +65,17 @@ footer {
     padding: 20px;
 }
 
+.firstRowC:hover {
+    cursor: pointer;
+}
+
 .firstRowD {
     display: inline-block;
     padding: 20px;
+}
+
+.firstRowD:hover {
+    cursor: pointer;
 }
 
 .firstRowE {
@@ -67,9 +83,17 @@ footer {
     padding: 20px;
 }
 
+.firstRowE:hover {
+    cursor: pointer;
+}
+
 .firstRowF {
     display: inline-block;
     padding: 20px;
+}
+
+.firstRowF:hover {
+    cursor: pointer;
 }
 
 .firstRowG {
@@ -77,9 +101,17 @@ footer {
     padding: 20px;
 }
 
+.firstRowG:hover {
+    cursor: pointer;
+}
+
 .firstRowH {
     display: inline-block;
     padding: 20px;
+}
+
+.firstRowH:hover {
+    cursor: pointer;
 }
 
 .firstRowI {
@@ -87,9 +119,17 @@ footer {
     padding: 20px;
 }
 
+.firstRowI:hover {
+    cursor: pointer;
+}
+
 .firstRowJ {
     display: inline-block;
     padding: 20px;
+}
+
+.firstRowJ:hover {
+    cursor: pointer;
 }
 
 .firstRowK {
@@ -97,9 +137,17 @@ footer {
     padding: 20px;
 }
 
+.firstRowK:hover {
+    cursor: pointer;
+}
+
 .secondRowL {
     display: inline-block;
     padding: 20px;
+}
+
+.secondRowL:hover {
+    cursor: pointer;
 }
 
 .secondRowM {
@@ -107,9 +155,17 @@ footer {
     padding: 20px;
 }
 
+.secondRowM:hover {
+    cursor: pointer;
+}
+
 .secondRowN {
     display: inline-block;
     padding: 20px;
+}
+
+.secondRowN:hover {
+    cursor: pointer;
 }
 
 .secondRowO {
@@ -117,9 +173,17 @@ footer {
     padding: 20px;
 }
 
+.secondRowO:hover {
+    cursor: pointer;
+}
+
 .secondRowP {
     display: inline-block;
     padding: 20px;
+}
+
+.secondRowP:hover {
+    cursor: pointer;
 }
 
 .secondRowQ {
@@ -127,9 +191,17 @@ footer {
     padding: 20px;
 }
 
+.secondRowQ:hover {
+    cursor: pointer;
+}
+
 .secondRowR {
     display: inline-block;
     padding: 20px;
+}
+
+.secondRowR:hover {
+    cursor: pointer;
 }
 
 .secondRowS {
@@ -137,9 +209,17 @@ footer {
     padding: 20px;
 }
 
+.secondRowS:hover {
+    cursor:pointer;
+}
+
 .secondRowT {
     display: inline-block;
     padding: 20px;
+}
+
+.secondRowT:hover {
+    cursor: pointer;
 }
 
 .secondRowU {
@@ -147,26 +227,53 @@ footer {
     padding: 20px;
 }
 
+.secondRowU:hover {
+    cursor: pointer;
+}
+
 .secondRowV {
     display: inline-block;
     padding: 20px;
+}
+
+.secondRowV:hover {
+    cursor: pointer;
 }
 
 .thirdRowW {
     display: inline-block;
     padding: 20px;
 }
+
+.thirdRowW:hover {
+    cursor: pointer;
+}
+
 .thirdRowX {
     display: inline-block;
     padding: 20px;
 }
+
+.thirdRowX:hover {
+    cursor: pointer;
+}
+
 .thirdRowY {
     display: inline-block;
     padding: 20px;
 }
+
+.thirdRowY:hover {
+    cursor: pointer;
+}
+
 .thirdRowZ {
     display: inline-block;
     padding: 20px;
+}
+
+.thirdRowZ:hover {
+    cursor: pointer;
 }
 
 .guessesLeft {
@@ -235,3 +342,4 @@ footer {
     justify-content: center;
     align-items: center;
 }
+
