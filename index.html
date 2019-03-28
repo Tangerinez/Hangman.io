@@ -18,7 +18,7 @@
         <div class="upperHalfRight">
             <div class="mystery-word">Mystery Word</div>
             <div class="randomWord">
-                <a href="#" class="myButton">Start</a>
+                <a href="#" class="start" onclick="start()"> Start</a>
             </div>
         </div>
     </div>
@@ -97,15 +97,19 @@ function blanks() {
 let wordArray = [];
 
 // Adds "_" for each letter into an empty array, then joins that array together
-const button = document.querySelector('.myButton')
-button.addEventListener('click', function() {
+const button = document.querySelector('.start')
+function start(){    
+    //button.addEventListener('click', function() {
     for (let i = 0; i < randomWord.length; i++) {
         wordArray.push('_');
     };
     button.innerText = wordArray.join(' ');
-});
+    displayLetters();
+};
+//};
 
 
+function displayLetters() {
 const keyboard = document.querySelector('.letters')
 keyboard.onclick = (event) => {      //Every time you click a letter...
     event.target.style.visibility = 'hidden';   //That element's opacity becomes 0
@@ -113,16 +117,20 @@ keyboard.onclick = (event) => {      //Every time you click a letter...
         if (letter === event.target.innerHTML.toLowerCase()) {    //If letter equals the letter in that index of the array
             wordArray[index] = letter;          //wordArray at the index of matched letter becomes that letter
             button.innerText = wordArray.join(' ');          //"_" gets replaced by the new matching letter
+            if (guessesLeft <= 8) {
+                guessesLeft++;    //Adds a +1 first before -1 after clicking the right letter
+            };
         };
     });
     guessWrong();   // Right now this decreases EVERY GUESS BY 1 -> Need to change for only incorrect guesses
+};
 };
 
 function guessWrong() {     //If user guesses letter incorrectly
     guessesLeft--;
     guessesLeft_div.textContent = guessesLeft;
     if (guessesLeft === 0) {
-        setTimeout("alert('You have lost. Please refresh the browser to try again.')", 300);
+        setTimeout("alert('You have lost. Please refresh the browser to try again or the game will break.')", 300);
     };
 };
 
