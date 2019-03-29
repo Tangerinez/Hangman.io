@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hangman!</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" style="text/css" href="assets/css/reset.css">
-    <link rel="stylesheet" style="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
     <header><h1>Welcome to Hangman!</h1></header>
@@ -18,124 +18,22 @@
         <div class="upperHalfRight">
             <div class="mystery-word">Mystery Word</div>
             <div class="randomWord">
-                <a href="#" class="start" onclick="start()"> Start</a>
+                <a href="#" class="start"> Start</a>
+                <span class="active-word"></span>
             </div>
         </div>
     </div>
 
     <div class="lowerHalf">
-    <div class="letters">
-        <div class="firstRow">
-        <div class="firstRowA">A</div>
-        <div class="firstRowB">B</div>
-        <div class="firstRowC">C</div>
-        <div class="firstRowD">D</div>
-        <div class="firstRowE">E</div>
-        <div class="firstRowF">F</div>
-        <div class="firstRowG">G</div>
-        <div class="firstRowH">H</div>
-        <div class="firstRowI">I</div>
-        <div class="firstRowJ">J</div>
-        <div class="firstRowK">K</div>
-        </div>
-        
-        <div class="secondRow">
-        <div class="secondRowL">L</div>
-        <div class="secondRowM">M</div>
-        <div class="secondRowN">N</div>
-        <div class="secondRowO">O</div>
-        <div class="secondRowP">P</div>
-        <div class="secondRowQ">Q</div>
-        <div class="secondRowR">R</div>
-        <div class="secondRowS">S</div>
-        <div class="secondRowT">T</div>
-        <div class="secondRowU">U</div>
-        <div class="secondRowV">V</div>
-        </div>  
-        
-        <div class="thirdRow">
-        <div class="thirdRowW">W</div>
-        <div class="thirdRowX">X</div>
-        <div class="thirdRowY">Y</div>
-        <div class="thirdRowZ">Z</div>
-        </div>  
+        <div class="keyboard"></div>
     </div>
 
 
-    
     <div class="guessesLeft">
         <div class="guesses">Guesses Left:</div>
-        <div class="numberGuesses">8</div>
+        <div class="numberGuesses"></div>
     </div>
-</div>
 
-<script type="text/javascript">
-
-const words = ["nasty", "basketball", "immolate", "crib", "competition", "queen", "lawyer", "brash", "flavor", "crack", "top", "drum", "easy", "hat", "bitter", 
-"filthy", "imbibe", "breezy", "book", "habitual", "compel", "sand", "petite", "boot", "vanish", "earsplitting", "science", "apathetic", "dispensable", "hair",
-"rat", "pump", "renounce", "sort", "earn", "dashing", "resist", "harmony", "invincible", "inspire", "utopian", "astonishing", "macho", "banish", "overconfident",
-"functional", "gusty", "omit", "leather", "interesting", "converse", "bit", "occur", "breakfast", "key", "aboriginal", "terrific", "vigorous", "mailbox", "flee"];
-
-// Number of guesses left
-let guessesLeft = 8;
-let guessesLeft_div = document.querySelector(".numberGuesses");
-
-// Returns a string
-const randomWord = words[Math.floor(Math.random() * words.length) + 1];
-console.log(randomWord);
-
-//Each letter of the random word as an index of an array
-const wordChar = randomWord.split('');
-
-// Returns "_" for every letter in the word
-function blanks() {
-    for (var i = 0; i< randomWord.length; i++) {
-    answers[i] = "_";
-    };
-};
-
-let wordArray = [];
-
-// Adds "_" for each letter into an empty array, then joins that array together
-const button = document.querySelector('.start')
-function start(){    
-    //button.addEventListener('click', function() {
-    for (let i = 0; i < randomWord.length; i++) {
-        wordArray.push('_');
-    };
-    button.innerText = wordArray.join(' ');
-    displayLetters();
-};
-//};
-
-
-function displayLetters() {
-const keyboard = document.querySelector('.letters')
-keyboard.onclick = (event) => {      //Every time you click a letter...
-    event.target.style.visibility = 'hidden';   //That element's opacity becomes 0
-    wordChar.forEach((letter, index) => {         
-        if (letter === event.target.innerHTML.toLowerCase()) {    //If letter equals the letter in that index of the array
-            wordArray[index] = letter;          //wordArray at the index of matched letter becomes that letter
-            button.innerText = wordArray.join(' ');          //"_" gets replaced by the new matching letter
-            if (guessesLeft <= 8) {
-                guessesLeft++;    //Adds a +1 first before -1 after clicking the right letter
-            };
-        };
-    });
-    guessWrong();   // Right now this decreases EVERY GUESS BY 1 -> Need to change for only incorrect guesses
-};
-};
-
-function guessWrong() {     //If user guesses letter incorrectly
-    guessesLeft--;
-    guessesLeft_div.textContent = guessesLeft;
-    if (guessesLeft === 0) {
-        setTimeout("alert('You have lost. Please refresh the browser to try again or the game will break.')", 300);
-    };
-};
-
-
-</script>
-
+    <script src="assets/javascript/game.js"></script>
 </body>
 </html>
