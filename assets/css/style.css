@@ -345,7 +345,22 @@ footer {
     align-items: center;
 }
 
-.lowerHalf {
-    height: 100%;
+@media only screen and (max-width: 1080px) {
+
 }
 
+@media only screen and (max-width: 980px) {
+
+}
+
+@media only screen and (max-width: 880px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 480px) {
+    
+}
