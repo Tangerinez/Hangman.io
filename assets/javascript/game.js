@@ -1,7 +1,8 @@
 const words = ["nasty", "basketball", "immolate", "crib", "competition", "queen", "lawyer", "brash", "flavor", "crack", "top", "drum", "easy", "hat", "bitter", 
 "filthy", "imbibe", "breezy", "book", "habitual", "compel", "sand", "petite", "boot", "vanish", "earsplitting", "science", "apathetic", "dispensable", "hair",
 "rat", "pump", "renounce", "sort", "earn", "dashing", "resist", "harmony", "invincible", "inspire", "utopian", "astonishing", "macho", "banish", "overconfident",
-"functional", "gusty", "omit", "leather", "interesting", "converse", "bit", "occur", "breakfast", "key", "aboriginal", "terrific", "vigorous", "mailbox", "flee"];
+"functional", "gusty", "omit", "leather", "interesting", "converse", "bit", "occur", "breakfast", "key", "aboriginal", "terrific", "vigorous", "mailbox", "flee",
+"wacky", "squealing", "implant", "discover", "breakable", "uttermost", "hideous", "jittery", "disgusted", "vacuous", "attraction", "husky", "puzzling", "workable"];
 
 //Audio Win and Lose
 const audioWin = document.createElement("audio");
