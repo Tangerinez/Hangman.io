@@ -87,3 +87,5 @@ function guessWrong() {     //If user guesses letter incorrectly
     };
 };
 
+
+
