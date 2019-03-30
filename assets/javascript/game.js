@@ -48,9 +48,12 @@ let wordArray = [];
 const button = document.querySelector('.start')
 function start(){    
     //button.addEventListener('click', function() {
+    document.querySelector(".start").classList.add("start1");      //create non-functional button
+    document.querySelector(".start").classList.remove("start");      //create functional button
     for (let i = 0; i < randomWord.length; i++) {
         wordArray.push('_');
     };
+
     button.innerText = wordArray.join(' ');
     displayLetters();
 };
@@ -86,6 +89,8 @@ function guessWrong() {     //If user guesses letter incorrectly
         setTimeout("alert('You have lost. Please refresh the browser to try again or the game will break.')", 300);
     };
 };
+
+
 
 
 
