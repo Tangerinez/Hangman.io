@@ -15,7 +15,7 @@ header {
 .lowerHalf {
     background: rgb(161, 156, 156);
     height: 100%;
-    padding-bottom: 4.5%;
+    padding-bottom: 15%;
 }
 
 footer {
@@ -32,8 +32,12 @@ footer {
 }
 
 .mystery-word {
-    font-size: 180%;
+    font-size: 200%;
     font-family: Oswald, sans-serif;
+}
+
+.start {
+    font-size: 38%;
 }
 
 .letters {
@@ -353,14 +357,38 @@ footer {
 
 }
 
-@media only screen and (max-width: 880px) {
-
-}
 
 @media only screen and (max-width: 768px) {
-
+    .letters, .guessesLeft {
+        font-size: 24px;
+    }
+    .mystery-word {
+        font-size: 150%;
+    }
+    .start {
+        font-size: 32%;
+    }
+    .lowerHalf {
+        padding-bottom: 27%;
+    }
+    header {
+        font-size: 12px;
+    }
 }
 
 @media only screen and (max-width: 480px) {
-    
+    .letters, .guessesLeft {
+        font-size: 18px;
+    }
+    .mystery-word {
+        font-size: 120%;
+        position: relative;
+        top: 10px;
+    }
+    .start {
+        font-size: 25%;
+    }
+    .lowerHalf {
+        padding-bottom: 35%;
+    }
 }
