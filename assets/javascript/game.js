@@ -71,6 +71,7 @@ keyboard.onclick = (event) => {      //Every time you click a letter...
             if (button.innerText === wordChar.join(" ")) {
                 winSong();
                 setTimeout("alert('Congratulations, you have won! Please refresh the browser to play again or the game will break!')", 300);
+                setTimeout(function(){ location.reload(); }, 2000);
             };
             if (guessesLeft <= 8) {
                 guessesLeft++;    //Adds a +1 first before -1 after clicking the right letter
@@ -87,8 +88,11 @@ function guessWrong() {     //If user guesses letter incorrectly
     if (guessesLeft === 0) {
         loseSong();
         setTimeout("alert('You have lost. Please refresh the browser to try again or the game will break.')", 300);
+        setTimeout(function(){ location.reload(); }, 2000);
     };
 };
+
+
 
 
 
