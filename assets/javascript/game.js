@@ -4,6 +4,8 @@ const words = ["nasty", "basketball", "immolate", "crib", "competition", "queen"
 "functional", "gusty", "omit", "leather", "interesting", "converse", "bit", "occur", "breakfast", "key", "aboriginal", "terrific", "vigorous", "mailbox", "flee",
 "wacky", "squealing", "implant", "discover", "breakable", "uttermost", "hideous", "jittery", "disgusted", "vacuous", "attraction", "husky", "puzzling", "workable"];
 
+var visability = true;
+
 //Audio Win and Lose
 const audioWin = document.createElement("audio");
 audioWin.setAttribute("src", "assets/images/WinningSong.mp3");
@@ -63,7 +65,12 @@ function start(){
 function displayLetters() {
 const keyboard = document.querySelector('.letters')
 keyboard.onclick = (event) => {      //Every time you click a letter...
-    event.target.style.visibility = 'hidden';   //That element's opacity becomes 0
+    var grabVisablity = event.target.getAttribute("Visablevalue");
+    console.log(event.target.getAttribute("Visablevalue"));
+    if(grabVisablity == 1){
+        event.target.style.visibility = 'hidden';   //That element's opacity becomes 0
+        event.target.setAttribute("Visablevalue","0");
+        console.log("event: ", event.target.style.visibility);
     wordChar.forEach((letter, index) => {         
         if (letter === event.target.innerHTML.toLowerCase()) {    //If letter equals the letter in that index of the array
             wordArray[index] = letter;          //wordArray at the index of matched letter becomes that letter
@@ -79,6 +86,7 @@ keyboard.onclick = (event) => {      //Every time you click a letter...
         };
     });
     guessWrong();   // Right now this decreases EVERY GUESS BY 1 -> Need to change for only incorrect guesses
+    }
 };
 };
 
@@ -91,6 +99,7 @@ function guessWrong() {     //If user guesses letter incorrectly
         setTimeout(function(){ location.reload(); }, 2000);
     };
 };
+
 
 
 
